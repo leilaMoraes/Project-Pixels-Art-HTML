@@ -1,34 +1,45 @@
-window.onload = function () {
+window.onload = function() {
+  const colorBlack = document.querySelector('#color-black');
+  colorBlack.classList.add('selected');
+  //const colorPalette = document.querySelector('#color-palette'); 
+  //colorPalette.addEventListener('click', send);
+  
+  //function send(event) {
+    //let colorSelected = event.target.classList.replace('color', 'selected');
+
+  //}
+
+  
+  function generateColors() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255); 
+    const rgb = 'rgb' + '(' + r + ', ' + g + ', ' + b + ')';
+    return rgb;
+  }
+
   function associateColor() {
-    const color = document.getElementsByClassName('color');
-    for (let i = 1; i < color.length; i += 1) {
+    const color = document.querySelectorAll('.color');
+      for (let i = 1; i < color.length; i += 1) {
       color[i].style.backgroundColor = generateColors();
-    }
+      }
     return color;
   }
   console.log(associateColor());
 
-  function generateColors() {
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
-    let rgb = 'rgb' + '(' + r + ', ' + g + ', ' + b + ')';
-    return rgb;
-  }
-
   function createBoard() {
-    let pai = document.body;
-    let board = document.createElement('div');
+    const pai = document.body;
+    const board = document.createElement('div');
     board.id = 'pixel-board';
     pai.appendChild(board);
     return board;
   }
 
-  function boardSize(elements) {
-    for (let i = 1; i <= elements; i += 1) {
-      let boardWidth = document.createElement('div');
-      for (let ind = 1; ind <= elements; ind += 1) {
-        let boardHeight = document.createElement('div');
+  function boardSize(size) {
+    for (let i = 1; i <= size; i += 1) {
+      const boardWidth = document.createElement('div');
+      for (let ind = 1; ind <= size; ind += 1) {
+        const boardHeight = document.createElement('div');
         boardHeight.className = 'pixel';
         boardWidth.appendChild(boardHeight);
       }
@@ -38,13 +49,14 @@ window.onload = function () {
   boardSize(5);
 
   function styleChanges() {
-    let pixels = document.getElementsByClassName('pixel');
-    for (let elements of pixels) {
+    const pixels = document.querySelectorAll('.pixel');
+    for (const elements of pixels) {
       elements.style.width = '40px';
       elements.style.height = '40px';
       elements.style.border = '1px solid black';
     }
-    return elements;
+    return pixels;
   }
   console.log(styleChanges());
+
 }

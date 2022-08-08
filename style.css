@@ -1,3 +1,4 @@
+
 #title {
   text-align: center;
   margin-bottom: 50px;
@@ -6,6 +7,14 @@
 #color-palette {
   text-align: center;
   margin-bottom: 50px;
+}
+
+.selected {
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 50px;
+  box-shadow: -5px -5px 1em gold, 5px 5px 1em gold;
 }
 
 .color {
