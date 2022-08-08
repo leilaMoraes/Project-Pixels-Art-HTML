@@ -12,14 +12,6 @@ body {
   margin-bottom: 50px;
 }
 
-#color-pallet:disabled {
-  border: 1px solid black;
-  box-sizing: border-box;
-  display: inline-block;
-  padding: 50px;
-  box-shadow: -5px -5px 1em gold, 5px 5px 1em gold;
-}
-
 .selected {
   border: 1px solid black;
   box-sizing: border-box;
@@ -51,7 +43,7 @@ body {
 
 #clear-board {
   padding: 5px 20px;
-  background-color: rgb(236, 52, 52);
+  background-color: lightgrey;
   margin-bottom: 50px;
-  text-align: 50%;
+  margin-left: 35%;
 }
